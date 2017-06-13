@@ -33,6 +33,9 @@ v2.dir = function (lhs, rhs) {
 	var len = v2.distance(v2, {x: 0, y: 0});
 	return v2(v2.x / len, v2.y / len);
 };
+
+
+
 function Curve (points) {
 	this.points = points || [];
 	this.beziers = [];
@@ -41,7 +44,6 @@ function Curve (points) {
 	this.length = 0;
 	this.computeBeziers();
 }
-
 
 Curve.prototype.computeBeziers = function () {
 	this.beziers.length = 0;
@@ -164,3 +166,9 @@ Bezier.prototype.getUtoTmapping = function ( u, distance ) {
 	var t = ( i + segmentFraction ) / ( il -1 );
 	return t;
 };
+
+
+
+exports.v2 = v2;
+exports.Curve = Curve;
+exports.Bezier = Bezier;
